@@ -3,7 +3,6 @@ view: users {
     ;;
   drill_fields: [id]
 
-
   dimension: id {
     primary_key: yes
     type: number
@@ -60,11 +59,6 @@ view: users {
     sql: ${TABLE}.last_name ;;
   }
 
-  dimension: full_name {
-    type: string
-    sql: concat(${first_name}, "", ${last_name}) ;;
-  }
-
   dimension: latitude {
     type: number
     sql: ${TABLE}.latitude ;;
@@ -90,7 +84,6 @@ view: users {
     type: zipcode
     sql: ${TABLE}.zip ;;
   }
-
 
   measure: count {
     type: count

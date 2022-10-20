@@ -1,5 +1,6 @@
 view: order_items {
-  sql_table_name: `cloud-training-demos.looker_ecomm.order_items`;;
+  sql_table_name: `cloud-training-demos.looker_ecomm.order_items`
+    ;;
   drill_fields: [order_item_id]
 
   dimension: order_item_id {
@@ -16,7 +17,6 @@ view: order_items {
       date,
       week,
       month,
-      month_name,
       quarter,
       year
     ]
@@ -94,11 +94,6 @@ view: order_items {
     sql: ${TABLE}.user_id ;;
   }
 
-  measure: total_sales {
-    type: sum
-    sql: ${sale_price} ;;
-    value_format_name: usd_0
-  }
 
   measure: average_sale_price {
     type: average
