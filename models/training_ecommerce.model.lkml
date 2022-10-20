@@ -15,13 +15,6 @@ persist_with: training_ecommerce_default_datagroup
 label: "E-Commerce Training"
 
 explore: order_items {
-
-  join: order_details {
-    type: left_outer
-    sql_on: ${order_items.order_id} = ${order_details.order_id};;
-    relationship: many_to_one
-  }
-
   join: users {
     type: left_outer
     sql_on: ${order_items.user_id} = ${users.id} ;;
